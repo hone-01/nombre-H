@@ -1,0 +1,15 @@
+body {
+    font-family: 'terminal-font', sans-serif;
+    background-color: #ffffff;
+}
+
+.face-monitor {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'terminal-font';
+    src: url('/static/Fixedsys.ttf') format('truetype');
+}

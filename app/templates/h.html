@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block estilos %}
+<link href="{{ url_for('static', filename='css/main_page.css') }}" rel="stylesheet" type="text/css" />
+{% endblock estilos %}
+
+{% block radio_broadcast%} 
+<div>
+    <div>
+        <audio id="audioPlayer" loop="on" autoplay="on" >
+            <source src="{{ url_for('static', filename='audio/BroadcastInstrumentals.mp3') }}" type="audio/mp3">
+            Tu navegador es una basura
+        </audio>
+        
+        <button id="muteButton">Mute</button>
+        <input type="range" id="volumeControl" min="0" max="1" step="0.005" value="1">
+    </div>
+    <div>
+        <audio id="audioHello" autoplay="on">
+            <source src="{{ url_for('static', filename='audio/voice/ym_hello.mp3') }}" type="audio/mp3">
+            Enserio amigo, actualisate
+        </audio>
+    </div>
+</div>
+
+{% endblock radio_broadcast%}
+
+{% block contenido %}
+<div>
+    <div>
+        <div>
+            <div>
+                <p>Very important songs</p>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href='https://youtu.be/c9O3OeA1cy4?si=WXa_8xzDtwMVQoUG' target="_blank">Shiki No Uta</a>
+                    </li>
+                    <li>
+                        <a href='https://youtu.be/4PkcfQtibmU?si=xVbJkK3lMpFwIurr' target="_blank">Walk</a>
+                    </li>
+                    <li>
+                        <a href='https://youtu.be/Uoox9fpmDP0?si=QZyDDXk3BUy7QSen' target="_blank">Duvet</a>
+                    </li>
+                    <li>
+                        <a href='https://youtu.be/0Uhh62MUEic?si=kr4HaVDy8LdIwDbM' target="_blank">One Last Kiss</a>
+                    </li>
+                    <li>
+                        <a href='https://youtu.be/Gj4COXXQHT8?si=_-oSTD2b1qM5QyC6' target="_blank">Turista del amor</a>
+                    </li>
+                </ul>
+            <div>
+        </div>
+        <div class="container-face-body">
+            <div>
+                <img src="{{ url_for('static', filename='img/ym2.gif') }}" alt='oopsi! Aqui deberia haber una cara' class='face-body crt'/>
+            </div>
+            <div>
+                <p>
+                    Este es un parrafo
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido %}
+
+{% block funciones %}
+<script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+<script src="{{ url_for('static', filename='js/radio-controler.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('audioHello');
+        audio.volume = 0.3; // Establece el volumen al 30% cuando el audio esté cargado
+    });
+</script>
+{% endblock funciones %}

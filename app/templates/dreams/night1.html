@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream world</title>
+    <style>
+body, html {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.moving-image {
+    position: absolute;
+    right: -100%; /* Comienza fuera de la vista a la derecha */
+    animation: moveLeft 20s linear infinite;
+    height: 100%;
+    width: 100%;
+}
+
+.moving-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes moveLeft {
+    0% {
+        right: -100%; /* Fuera de la vista a la derecha */
+    }
+    100% {
+        right: 100%; /* Fuera de la vista a la izquierda */
+    }
+}
+    </style>
+</head>
+<body>
+    <div>
+        <audio id="audioPlayer" loop="on" autoplay="on" >
+            <source src="{{ url_for('static', filename='audio/music/ym-Dark_World.mp3') }}" type="audio/mp3">
+            Tu navegador no puede soñar
+        </audio>
+    </div>
+    <div class="container">
+        <div class="moving-image" style="top: 75%; animation-delay: 10s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov1"></div>
+        <div class="moving-image" style="top: 68%; animation-delay: 6.5s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov2"></div>
+        
+        <div class="moving-image" style="top: 70%; animation-delay: 17s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov3"></div>
+        <div class="moving-image" style="top: 74%; animation-delay: 2s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov4"></div>
+
+        <div class="moving-image" style="top: 55%; animation-delay: 7.5s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov5"></div>
+        <div class="moving-image" style="top: 64%; animation-delay: 11;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov6"></div>
+
+
+        <div class="center-image">
+            <a href="{{ url_for('home.logged') }}">
+                <img src="{{ url_for('static', filename='img/place-dream/walk.webp') }}" alt="Imagen centrada">
+            </a>
+        </div>
+
+        <div class="moving-image" style="top: 30%; animation-delay: 1s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov7"></div>
+        <div class="moving-image" style="top: 17%; animation-delay: 4.5s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov8"></div>
+
+        <div class="moving-image" style="top: 25%; animation-delay: 7s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov9"></div>
+        <div class="moving-image" style="top: 22%; animation-delay: 15s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov10"></div>
+
+        <div class="moving-image" style="top: 15%; animation-delay: 17s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov11"></div>
+        <div class="moving-image" style="top: 10%; animation-delay: 1.5s;" ><img src="{{ url_for('static', filename='img/place-dream/Fleebie_Side_2.gif') }}" alt="mov12"></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <!-- El css y tal -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/staticscreen.css') }}" rel="stylesheet" type="text/css" />
+
+    {% block estilos %}<!-- Aqui va los estilos -->{% endblock estilos %}
+
+    <title>Hone</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href='#'>» H</a></li>
+            <li><a href='{{ url_for("home.night1") }}'>» Dream</a></li>
+            <li><a href="{{ url_for('lain<3.redirecto_to_wired_sounds') }}">» Todos amemos a Lain &lt;3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block radio_broadcast %}<!-- Aqui va la transmicion -->{% endblock radio_broadcast%}
+    <div>
+        <div class='face-box'>
+            <div onclick='reproducirSonido()' >
+                <img src="{{ url_for('static', filename='img/yesMan.gif') }}" alt='oopsi! Aqui deberia haber una cara' class='face-monitor crt'/>
+            </div>
+        </div>
+    </div>
+
+    {% block contenido %}<!-- Aqui va el contenido -->{% endblock contenido %}
+
+    <!-- El js eso y tal -->
+    {% block funciones %}<!-- Aqui va los scripts -->{% endblock funciones %}
+</body>
+</html>

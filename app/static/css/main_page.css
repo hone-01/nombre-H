@@ -1,0 +1,15 @@
+.face-body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+.container-face-body {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    padding: 0 20px; /* Añadir espacio en los márgenes del contenedor */
+}
